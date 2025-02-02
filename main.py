@@ -86,10 +86,10 @@ class ControlsOverlay(QWidget):
     def toggle_pause(self):
         if self.video_player.media_player.state() == QMediaPlayer.PlayingState:
             self.video_player.media_player.pause()
-            self.pause_button.setText("Riprendi")
+            self.pause_button.setText("Resume")
         else:
             self.video_player.media_player.play()
-            self.pause_button.setText("Pausa")
+            self.pause_button.setText("Pause")
 
     def set_volume(self, value):
         self.video_player.media_player.setVolume(value)
@@ -115,7 +115,7 @@ class ToggleButton(QWidget):
         self.toggle_button = QPushButton("❌", self)
         self.toggle_button.clicked.connect(self.toggle_controls)
 
-        self.close_button = QPushButton("Chiudi video", self)
+        self.close_button = QPushButton("Close video", self)
         self.close_button.clicked.connect(self.video_player.close_video)
 
         layout.addWidget(self.toggle_button)
