@@ -39,4 +39,4 @@ start.bat
 ```
 
 ## Author
-(Axel00x)[https://github.com/Axel00x]
+[Axel00x](https://github.com/Axel00x)
