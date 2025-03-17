@@ -11,7 +11,7 @@ from PyQt5.QtMultimediaWidgets import QVideoWidget
 class VideoPlayer(QMainWindow):
     def __init__(self, video_path, initial_opacity):
         super().__init__()
-        self.setWindowTitle("Video Player")
+        self.setWindowTitle("Video Overlay")
 
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.WindowTransparentForInput)
         self.setAttribute(Qt.WA_TranslucentBackground, False)
@@ -57,7 +57,7 @@ class ControlsOverlay(QWidget):
 
         layout = QVBoxLayout()
 
-        self.pause_button = QPushButton("Pausa", self)
+        self.pause_button = QPushButton("Pause", self)
         self.pause_button.clicked.connect(self.toggle_pause)
 
         self.volume_slider = QSlider(Qt.Horizontal)
@@ -75,7 +75,7 @@ class ControlsOverlay(QWidget):
         layout.addWidget(self.pause_button)
         layout.addWidget(QLabel("Volume"))
         layout.addWidget(self.volume_slider)
-        layout.addWidget(QLabel("Opacità"))
+        layout.addWidget(QLabel("Opacity"))
         layout.addWidget(self.opacity_slider)
 
         self.setLayout(layout)
